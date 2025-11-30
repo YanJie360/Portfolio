@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="refresh" content="0;url=/#/" />
+    <script>
+      (function() {
+        try {
+          var pathname = window.location.pathname || '/';
+          var search = window.location.search || '';
+          var hash = window.location.hash || '';
+          // pathname like "/<repo>/path/to/page" or "/" on root
+          var parts = pathname.split('/').filter(Boolean); // remove empty
+          if (parts.length === 0) {
+            // root, redirect to hash root
+            window.location.replace('/#' + (hash || '/'));
+            return;
+          }
+          var repo = parts[0];
+          var rest = parts.slice(1).join('/');
+          if (rest) rest = '/' + rest;
+          else rest = '/';
+          var newUrl = '/' + repo + '/#' + rest + search + hash;
+          window.location.replace(newUrl);
+        } catch (e) {
+          // fallback: go to site root with hash
+          window.location.replace('/#/');
+        }
+      })();
+    </script>
+  </head>
+  <body>Redirecting…</body>
+</html>
