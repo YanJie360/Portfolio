@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.2eb841a4.css",
+    "main.css": "/portfolio/static/css/main.b0034077.css",
     "main.js": "/portfolio/static/js/main.4c685b49.js",
     "static/js/453.ac9b7e2a.chunk.js": "/portfolio/static/js/453.ac9b7e2a.chunk.js",
     "static/media/LIAUWYANJIE_CHINESE CV.pdf": "/portfolio/static/media/LIAUWYANJIE_CHINESE CV.af73f18d8a0186a2659b.pdf",
@@ -39,12 +39,12 @@
     "static/media/Tailwind.svg": "/portfolio/static/media/Tailwind.5dc20a22c455a7a4efeeb9cba430f50b.svg",
     "static/media/paloalto.svg": "/portfolio/static/media/paloalto.76e6698829e1b3c2cb3c6b82fda0b64c.svg",
     "static/media/BurpSuite.svg": "/portfolio/static/media/BurpSuite.39cbacb9651bc60165cf41cab73a0733.svg",
-    "main.2eb841a4.css.map": "/portfolio/static/css/main.2eb841a4.css.map",
+    "main.b0034077.css.map": "/portfolio/static/css/main.b0034077.css.map",
     "main.4c685b49.js.map": "/portfolio/static/js/main.4c685b49.js.map",
     "453.ac9b7e2a.chunk.js.map": "/portfolio/static/js/453.ac9b7e2a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2eb841a4.css",
+    "static/css/main.b0034077.css",
     "static/js/main.4c685b49.js"
   ]
 }
