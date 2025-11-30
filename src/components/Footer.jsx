@@ -21,7 +21,7 @@ function Footer() {
             <li className="social-icons">
               <a
                 href="https://github.com/YanJie360"
-                style={{ color: "white" }}
+                style={{ color: "rgb(var(--muted))" }}
                 target="_blank" 
                 rel="noopener noreferrer"
               >
@@ -31,7 +31,7 @@ function Footer() {
             <li className="social-icons">
               <a
                 href="https://www.linkedin.com/in/yanjieliauw/"
-                style={{ color: "white" }}
+                style={{ color: "rgb(var(--muted))" }}
                 target="_blank" 
                 rel="noopener noreferrer"
               >
