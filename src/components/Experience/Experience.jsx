@@ -8,6 +8,11 @@ import dart from "../../Assets/Experience/dart.png";
 import ncc from "../../Assets/Experience/ncc.png";
 import pathlight from "../../Assets/Experience/PATHLIGHT.png";
 import hihs from "../../Assets/Experience/hihs.png";
+import foundations from "../../Assets/Experience/foundations.pdf";
+import literacy from "../../Assets/Experience/literacy.pdf";
+import csharp from "../../Assets/Experience/csharp.pdf";
+import esm from "../../Assets/Experience/esm.pdf";
+import luma from "../../Assets/Experience/luma.png";
 
 function Experience() {
   return (
@@ -15,7 +20,7 @@ function Experience() {
       <Particle />
       <Container>
         <h1 className="project-heading">
-          My <strong className="main-name">Education </strong>
+          My <strong className="main-name">Education</strong>
         </h1>
 
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
@@ -43,7 +48,7 @@ function Experience() {
         </Row>
 
         <h1 className="project-heading">
-          My <strong className="main-name">Work </strong>
+          My <strong className="main-name">Work</strong>
         </h1>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
@@ -58,7 +63,63 @@ function Experience() {
         </Row>
         
         <h1 className="project-heading">
-          My <strong className="main-name">Co-Curriculars </strong>
+          My <strong className="main-name">Certifications</strong>
+        </h1>
+        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          <Col md={4} className="project-card">
+            <ExperienceCards
+              imgPath={esm}
+              isBlog={false}
+              title="Enterprise Security Management"
+              duration="2025"
+              description="Completed the 'Enterprise Security Management' course by Palo Alto Networks Cybersecurity Academy, covering key concepts in enterprise security management."
+              fullText={`Learned about security policies, threat prevention, and network security best practices through hands-on labs and real-world scenarios.`}
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ExperienceCards
+              imgPath={foundations}
+              isBlog={false}
+              title="Foundations in AI"
+              duration="2025"
+              description="Completed the 'Foundations in AI' course by AI Singapore, covering AI concepts, machine learning, and ethical considerations."
+              fullText={`Gained practical experience through hands-on projects and assignments, applying AI techniques to real-world scenarios.`}
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ExperienceCards
+              imgPath={literacy}
+              isBlog={false}
+              title="AI Literacy"
+              duration="2024"
+              description="Completed the 'AI Literacy' course by AI Singapore, providing a comprehensive overview of AI technologies and their applications."
+              fullText={`Learned about AI concepts, tools, and techniques, enabling informed decision-making in AI-related projects and initiatives.`}
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ExperienceCards
+              imgPath={csharp}
+              isBlog={false}
+              title="C# Programming"
+              duration="2025"
+              description="Completed the 'Foundational C# with Microsoft' course by freeCodeCamp. Covers C# programming basics, object-oriented programming, and software development principles."
+              fullText={`Gained practical experience through coding exercises and projects, developing skills in object-oriented programming and software development using C#.`}
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ExperienceCards
+              imgPath={luma}
+              isBlog={false}
+              title="LUMA Foundation Course"
+              duration="2025"
+              description="Completed the 'LUMA Foundation Course', learning human-centered design principles and methodologies to foster innovation and creativity."
+              fullText={`Acquired skills in problem-solving, ideation, and prototyping, enabling effective collaboration and design thinking in various projects.`}
+            />
+          </Col>
+        </Row>
+
+        <h1 className="project-heading">
+          My <strong className="main-name">Co-Curriculars</strong>
         </h1>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">

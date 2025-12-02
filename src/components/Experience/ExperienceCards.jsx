@@ -1,13 +1,57 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { CgWebsite } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
+import { Document, Page, pdfjs } from "react-pdf";
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function ProjectCards(props) {
+  const imgPath = props.imgPath;
+  const isPdf = !!imgPath && typeof imgPath === "string" && imgPath.toLowerCase().endsWith(".pdf");
+
+  const [numPages, setNumPages] = useState(null);
+  const [pageWidth, setPageWidth] = useState(300);
+  const containerRef = useRef(null);
+
+  function onDocumentLoadSuccess({ numPages }) {
+    setNumPages(numPages);
+  }
+
+  useEffect(() => {
+    function updateWidth() {
+      if (containerRef.current) {
+        // Subtract small padding to avoid horizontal scroll
+        const w = containerRef.current.offsetWidth - 16;
+        setPageWidth(w > 200 ? w : 200);
+      }
+    }
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
   return (
     <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
+      {/* Render image or PDF preview depending on the file type */}
+      {imgPath && !isPdf && (
+        <Card.Img variant="top" src={imgPath} alt="card-img" />
+      )}
+
+      {imgPath && isPdf && (
+        <div ref={containerRef} style={{ padding: "0.75rem", background: "#f8f9fa" }}>
+          <div>
+            <Document file={imgPath} onLoadSuccess={onDocumentLoadSuccess} onLoadError={console.error} loading="">
+              {Array.from(new Array(numPages), (el, index) => (
+                <div key={`page_${index + 1}`} style={{ display: "flex", justifyContent: "center", marginBottom: 8 }}>
+                  <Page pageNumber={index + 1} width={pageWidth} />
+                </div>
+              ))}
+            </Document>
+          </div>
+        </div>
+      )}
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
         {/* Short description / summary */}
